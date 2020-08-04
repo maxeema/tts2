@@ -5,6 +5,9 @@
 # Stores mp3 at db/ dir
 # Writes last run index to build/_index_en.json
 #
+# TODO: migrate to Dart version like that
+#  https://medium.com/@jeffmcmorris/dart-flutter-command-line-google-text-to-speech-api-tutorial-6b70e16c9075
+#
 
 # prepare
 - install node js like: snap install node

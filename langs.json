@@ -1,0 +1,25 @@
+{
+  "map": {
+    "en": "en-US",
+    "nl": "nl-NL",
+    "ru": "ru-RU"
+  },
+  "en-US": {
+    "SF": ["en-US-Standard-C", "en-US-Standard-E"],
+    "SM": ["en-US-Standard-B", "en-US-Standard-D"],
+    "F": ["en-US-Wavenet-C", "en-US-Wavenet-E", "en-US-Wavenet-F"],
+    "M": ["en-US-Wavenet-A", "en-US-Wavenet-B", "en-US-Wavenet-D"]
+  },
+  "nl-NL": {
+    "SF": ["nl-NL-Standard-E", "nl-NL-Standard-D"],
+    "SM": ["nl-NL-Standard-C", "nl-NL-Standard-B"],
+     "F": ["nl-NL-Wavenet-A", "nl-NL-Wavenet-D", "nl-NL-Wavenet-E"],
+     "M": ["nl-NL-Wavenet-B", "nl-NL-Wavenet-C"]
+  },
+  "ru-RU": {
+    "SF": ["ru-RU-Standard-E", "ru-RU-Standard-C"],
+    "SM": ["ru-RU-Standard-D", "ru-RU-Standard-B"],
+    "F": ["ru-RU-Wavenet-A", "ru-RU-Wavenet-C", "ru-RU-Wavenet-E"],
+    "M": ["ru-RU-Wavenet-B", "ru-RU-Wavenet-D"]
+  }
+}

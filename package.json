@@ -1,0 +1,20 @@
+{
+  "name": "tts2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maksim Shemetov",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^3.0.1",
+    "get-json": "^1.0.1"
+  },
+  "devDependencies": {
+    "bluebird": "^3.7.2",
+    "line-reader": "^0.4.0"
+  }
+}

@@ -7,7 +7,8 @@
 #
 
 # prepare
-- install node js
+- install node js like: snap install node
+- install dependencies like: npm i --save
 - put your credentials.json from Google TTS service account into project root
 
 # to run

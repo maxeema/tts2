@@ -1,6 +1,5 @@
 node_modules/
 build/
-input/*
 credentials.json
 package-lock.json
 

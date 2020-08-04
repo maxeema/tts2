@@ -1,0 +1,21 @@
+//
+# Utility downloads mp3 from Google TTS for specific lang
+// And stores downloads locally to not download the same twice
+// Takes en.csv from input/ dir
+// Stores mp3 at db/ dir
+// Writes last run index to build/_index_en.json
+//
+
+# prepare
+- install node js
+- put credentials.json from your Google TTS service account into project root
+
+# to run
+./run.sh en | ru | nl
+#or
+export GOOGLE_APPLICATION_CREDENTIALS=credentials.json
+node index.js en | ru | nl
+
+
+
+@author Maksim Shemetov, 2020

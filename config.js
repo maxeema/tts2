@@ -1,7 +1,6 @@
 
 module.exports = {
-    delimiter: ';', //bytes
-    ignoreFirstLine: true, //bytes
+    csvItemDelimiter: ';', //bytes
+    delayAfterEachDownload: 500, //ms
     smallFileThatLessThan: 2500, //bytes
-    delayAfterEachDownload: 700, //ms
 }

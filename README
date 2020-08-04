@@ -1,26 +1,46 @@
 #
-# Utility downloads mp3 from Google TTS for specific lang
+# My Node.js script downloads mp3 from Google TTS for specific lang, party(speaker), sex(gender)
 # And stores downloads locally to not download the same twice
-# Takes en.csv from input/ dir
-# Stores mp3 at db/ dir
+# Takes input/en.csv as input data to make mp3s
+# Stores download mp3s at db/en/*.mp3
 # Writes last run index to build/_index_en.json
 #
-# TODO: migrate to Dart version like that
-#  https://medium.com/@jeffmcmorris/dart-flutter-command-line-google-text-to-speech-api-tutorial-6b70e16c9075
-#
-
-# prepare
-- install node js like: snap install node
-- install dependencies like: npm i --save
-- put your credentials.json from Google TTS service account into project root
+# Sounds for 'party' == A, B are Wavenet variant - high-quality, realistic.
+# Sounds for 'party' == S are standard variant, low-quality, robotic.
 
 # to run
-./run.sh en | ru | nl
+./run.sh en
 # or
 export GOOGLE_APPLICATION_CREDENTIALS=credentials.json
 node index.js en | ru | nl
 
+# prepare
+- install Node like: snap install node
+- get dependencies like: npm i --save
+- put your credentials.json from Google TTS service account into project root
+
+#
+# Supported party(speakers):
+#   A - default, first variant of the voice
+#   B - second variant of the voice
+#   S - used for robotic variant of the pronunciation
+# Supported genders: F - female voice, default. M - male voice.
+# Supported languages: en, ru, nl. See langs.json map and tune/extend it as you want.
+#
+
+# What an idea to use 'party' and 'sex'
+# With sex is obviously, use F to get female and M for male voice
+# But what if you want to use F but with a second version of the female voice which is different from default?
+# Then you use 'party' as B to get second female/male voice
+#
+# And don't worry!
+# Just try to play with script, different sex (F, M), party(A, B, S) and you'll get the point.
+# Also, about 'party' == S. It is pronounced by robotized female/male voice. For special purposes =)
+
+# https://cloud.google.com/text-to-speech
+# https://cloud.google.com/nodejs/docs/reference/text-to-speech/
+
+# There is something in Dart https://medium.com/@jeffmcmorris/dart-flutter-command-line-google-text-to-speech-api-tutorial-6b70e16c9075
 
 MIT License
 @author Maksim Shemetov, 2020
-

@@ -32,12 +32,9 @@ const downloaded = [];
 const small = [];
 
 const columns = {
-    'id': 0,
-    'party': 1,
-    'sex': 2,
-    'actor': 3,
-    'phrase': 4,
-    // 'file': 5,
+    'party': 0,
+    'sex': 1,
+    'phrase': 2,
 }
 
 function start(lang) {
@@ -52,15 +49,20 @@ async function parse(lang) {
     console.log(`reading... ${inputFile}`);
     //
     const eachLine = Promise.promisify(lineReader.eachLine);
+    let firstLine = true;
     await eachLine(inputFile, function(line) {
-        let split = line.split(c.delimiter);
-        if (split[columns.id].trim() == 'id')
+        let split = line.split(c.csvItemDelimiter);
+        if (firstLine) {
+            firstLine = false;
+            if (!(split[columns.party].trim() == 'party' && split[columns.sex].trim() == 'sex' && split[columns.phrase].trim() == 'phrase'))
+                throw 'Check columns are defined right!';
             return;
+        }
         let j = {
-            'id': split[columns.id].trim(),
+            // 'id': split[columns.id].trim(),
             'party': validateParty(split[columns.party].trim()),
             'sex': validateSex(split[columns.sex]).trim(),
-            'actor': validateActor(split[columns.actor].trim()),
+            // 'actor': validateActor(split[columns.actor].trim()),
             'phrase': validatePhrase(split[columns.phrase].trim()),
             // 'file': validateFile(split[columns.file].trim()),
         };

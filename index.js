@@ -103,7 +103,7 @@ async function doIt(data) {
     console.log(`> 'total items: ${data.length}'`);
     //
     if (!fs.existsSync(`db/${lang}`))
-        fs.mkdirSync(`db/${lang}`);
+        fs.mkdirSync(`db/${lang}`, {recursive: true});
     //
     const dbFile = `db/${lang}.json`;
     console.log(`reading... ${dbFile}`);

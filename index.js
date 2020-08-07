@@ -49,15 +49,10 @@ async function parse(lang) {
     console.log(`reading... ${inputFile}`);
     //
     const eachLine = Promise.promisify(lineReader.eachLine);
-    let firstLine = true;
     await eachLine(inputFile, function(line) {
         let split = line.split(c.csvItemDelimiter);
-        if (firstLine) {
-            firstLine = false;
-            if (!(split[columns.party].trim() == 'party' && split[columns.sex].trim() == 'sex' && split[columns.phrase].trim() == 'phrase'))
-                throw 'Check columns are defined right!';
+        if (line == ';;;;' || split[columns.id].trim() == 'id')
             return;
-        }
         let j = {
             // 'id': split[columns.id].trim(),
             'party': validateParty(split[columns.party].trim()),

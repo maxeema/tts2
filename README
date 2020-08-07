@@ -7,6 +7,10 @@
 #
 # Sounds for 'party' == A, B are Wavenet variant - high-quality, realistic.
 # Sounds for 'party' == S are standard variant, low-quality, robotic.
+#
+# The script on my purposes uses just three langs: en, nl, ru
+# But it can support more language which provided by Google TTS
+# Just take a look on langs.json config mapping and extend/modify it as you need
 
 # to run
 ./run.sh en
@@ -24,8 +28,16 @@ node index.js en | ru | nl
 #   A - default, first variant of the voice
 #   B - second variant of the voice
 #   S - used for robotic variant of the pronunciation
+#
 # Supported genders: F - female voice, default. M - male voice.
-# Supported languages: en, ru, nl. See langs.json map and tune/extend it as you want.
+# But be aware: some languages like Swedish don't support male voice or even has only one variant of pronunciation.
+#
+# Predefined languages: en, ru, nl.
+# See langs.json map and tune/extend it as you want.
+# All the supported languages and variants at
+# https://cloud.google.com/text-to-speech/docs/voices
+#
+# Spanish: unfortunatly, Google TTS on today Aug 8, 2020 has only single standard Spanish female voice
 #
 
 # What an idea to use 'party' and 'sex'
@@ -36,6 +48,7 @@ node index.js en | ru | nl
 # And don't worry!
 # Just try to play with script, different sex (F, M), party(A, B, S) and you'll get the point.
 # Also, about 'party' == S. It is pronounced by robotized female/male voice. For special purposes =)
+# 
 
 # https://cloud.google.com/text-to-speech
 # https://cloud.google.com/nodejs/docs/reference/text-to-speech/
